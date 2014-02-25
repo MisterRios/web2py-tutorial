@@ -20,6 +20,8 @@ def index():
     companies = db(db.company).select()
     return locals()
 
+def tester():
+    return locals()
 
 def user():
     """

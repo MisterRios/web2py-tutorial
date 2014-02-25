@@ -1,2 +1,10 @@
 [2014-02-25 14:59:53] START
 [2014-02-25 14:59:53] EDIT py2manager/controllers/default.py: 0
+[2014-02-25 15:14:02] EDIT py2manager/controllers/default.py: 2
+[2014-02-25 15:14:49] CREATE default/tester.html: 0
+[2014-02-25 15:16:23] EDIT py2manager/views/default/tester.html: 5
+[2014-02-25 15:22:05] EDIT py2manager/views/default/index.html: -15
+[2014-02-25 15:28:52] EDIT py2manager/models/menu.py: 3
+[2014-02-25 15:28:55] EDIT py2manager/views/default/user.html: 0
+[2014-02-25 15:28:58] EDIT py2manager/views/default/index.html: 0
+[2014-02-25 15:32:00] EDIT py2manager/models/menu.py: 0
