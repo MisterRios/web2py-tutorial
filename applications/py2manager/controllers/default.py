@@ -14,9 +14,14 @@ def index():
     """
     
     """
-    projects = db(db.project).select()
-    users = db(db.auth_user).select()
-    companies = db(db.company).select()
+    response.flash = T('Welcome!')
+    grid = SQLFORM.grid(db.project, create=False, fields=[
+        db.project.name,
+        db.project.employee_name,
+        db.project.company_name,
+        db.project.start_date,
+        db.project.due_date,
+        db.project.completed], deletable=False, maxtextlength=50)
     return locals()
 
 @auth.requires_login()
@@ -27,6 +32,21 @@ def add():
 @auth.requires_login()
 def company():
     company_form = SQLFORM(db.company).process()
+    grid = SQLFORM.grid(db.company, create=False, deletable=False, maxtextlength=50, editable=False, orderby=db.company.company_name)
+    #amending of the defaults create=False removes the add button from the grid
+    #editable means they can't edit an item (removes button)
+    #same for deletable. max texth length is self explanatory
+    return locals()
+
+@auth.requires_login()
+def employee():
+    employee_form = SQLFORM(db.auth_user).process()
+    grid = SQLFORM.grid(db.auth_user, create=False, deletable=False, editable=False, maxtextlength=50, fields=[
+        db.auth_user.first_name,
+        db.auth_user.last_name,
+        db.auth_user.email,
+        db.auth_user.city
+        ])
     return locals()
 
 
