@@ -1,0 +1,16 @@
+{{extend 'layout.html'}}
+<h2>Add a new company</h2>
+<br>
+{{=company_form.custom.begin}}
+<strong>Company Name</strong>
+{{=company_form.custom.widget.company_name}}<br>
+<strong>Email</strong>
+{{=company_form.custom.widget.email}}<br>
+<strong>Phone</strong>
+{{=company_form.custom.widget.phone}}<br>
+<strong>URL</strong>
+{{=company_form.custom.widget.url}}<br>
+
+{{=company_form.custom.submit}}
+
+{{=company_form.custom.end}}

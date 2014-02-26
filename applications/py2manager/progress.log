@@ -8,3 +8,5 @@
 [2014-02-25 15:28:55] EDIT py2manager/views/default/user.html: 0
 [2014-02-25 15:28:58] EDIT py2manager/views/default/index.html: 0
 [2014-02-25 15:32:00] EDIT py2manager/models/menu.py: 0
+[2014-02-25 16:03:25] EDIT py2manager/views/default/index.html: -1
+[2014-02-26 20:11:01] EDIT py2manager/controllers/default.py: 4
