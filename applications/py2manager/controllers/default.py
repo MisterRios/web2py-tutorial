@@ -15,13 +15,14 @@ def index():
     
     """
     response.flash = T('Welcome!')
+    notes = [lambda project: A('Notes', _class="btn", _href=URL("default","note", args=[project.id]))]
     grid = SQLFORM.grid(db.project, create=False, fields=[
         db.project.name,
         db.project.employee_name,
         db.project.company_name,
         db.project.start_date,
         db.project.due_date,
-        db.project.completed], deletable=False, maxtextlength=50)
+        db.project.completed], links=notes, deletable=False, maxtextlength=50)
     return locals()
 
 @auth.requires_login()
@@ -47,6 +48,14 @@ def employee():
         db.auth_user.email,
         db.auth_user.city
         ])
+    return locals()
+
+@auth.requires_login()
+def note():
+    project = db.project(request.args(0))
+    db.note.post_id.default = project.id
+    form = crud.create(db.note) if auth.user else "Login to Post to the Project"
+    allnotes = db(db.note.post_id==project.id).select()
     return locals()
 
 
